@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head><!--contains all the important information web browsers and search engines need regarding a web page-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mary's-Portfolio</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- normalize used to equally load across all browsers -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+    rel="stylesheet"
+    type="text/css"
+    />
+  </head>
+  <body> <!--All body from this line-->
+    <header>
+      <div>
+        <h1>Mary John Benjamin</h1><!--largest font size-->
+        <p>Software Developer</p>
+      </div>
+      <nav>
+        <!--use to link sections from the page itself-->
+    <a href="#intro">Intro</a>
+    <a href="#background">About Me</a>
+    <a href="#contact">Contact</a>
+    </nav>
+    </header>
+    <hr>
+    <main><!--three different sections are specified in <main> element-->
+      <section id="intro"><!--done so that when the links created above is clicked this will take the person to the designated position in the page-->
+      <!--relative link is used to input profile picture-->
+        <img class="center" src="mary-profile-pictures/mary-dp.jpg" width = "500" alt="Profile picture of Mary Benjamin"> <!--class="center' is used to align picture using css-->
+        <h2>Hello! My name is Mary Benjamin</h2>
+        <p>I'm a software developer from Forney, Texas.</p>
+        <p>Currently I am taking full-stack developer classes with Thinkful.</p>
+        <p>My passion for web development started in college days and even though I could not pursure the world of coding back then I'm more than excited to start this journey.</p>
+      </section>
+      <hr>
+      <section id="background">
+        <h2>A Little Background</h2><!--font smaller than h1 but larger than h3-->
+        <p>I graduated from college from The University of Texas at Dallas and worked various jobs for a while. Even though I enjoyed self-taught coding I understood that I needed something more structered to reach my goal of becomming a software developer one day. I enjoy collaborating and developing websites. If you are looking to hire developers, please don't hesitate to <a href="#contact">contact me.</a></p><!--href used to go to sections within the page-->
+        <h3>Beyond Coding</h3>
+        <p>Outside of coding I enjoy:</p>
+        <ul> <!--unorganized list is used to give bullet points-->
+          <li>Travelling</li>
+          <li>Photography</li>
+          <li>Gardening</li>
+        </ul>
+        <p>I also have a pet cat Christopher. He is a Maine Coon kitty who loves to sit on top of my keyboard demanding attention!</p>
+      </section>
+      <hr><!--horizontal rules is used to draw through the page-->
+      <section id="contact">
+        <h2>How to Contact Me?</h2>
+        <p>It will be a great pleasure to hear from you! Please feel free to contact me or to checkout out my <a href="https://github.com/maryjohnben">GitHub</a>:</p> <!--absolute link is used to attach github information-->
+        <ol><!--organized list is used to give ordered list. This in returns numbered list-->
+          <li><a href="https://www.linkedin.com/in/mary-benjamin-044a10216/">LinkedIn</a></li><!--absolute link is used to attach github and linkedin information-->
+          <li><a href="https://github.com/maryjohnben">GitHub</a></li>
+        </ol>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>&copy Mary Benjamin</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

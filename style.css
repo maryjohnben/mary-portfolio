@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box /*applied to the entire site, controls how box border is calculated*/
+}
+
+body{
+  margin: auto;
+  width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /*backup fonds used in case browser cannot load one kind*/
+}
+p{ /*all paragraph unless otherwise noted will be 16px*/
+  font-size: 16px
+}
+div, h2, nav, footer {
+  text-align: center;
+}
+header > div {
+  background-image: linear-gradient(to right, #B22222, #fff);
+  padding: 10px;
+  text-align: center
+}
+
+nav {
+  background-color: #Ffcccb;
+}
+nav a {
+  display: inline-block; /*used to keep the buttons on the same line*/
+  margin: 10px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  background-color:azure;
+  padding: 10px;
+  text-decoration: none; /*removes hyperlink*/
+}
+
+.center { /*using to style and center the picture*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 1px solid #000; /*picture border specified*/
+  border-radius: 4px; /*use to give a slight curve to the picture border*/
+}
+footer {
+  background-color:antiquewhite;
+  padding: 4px;
+}
+section{
+  /* margin-top: 2em;
+  margin-right: 10em;
+  margin-left: 10em; */
+  margin: 2em 18em /*display margin*/
+}
+ol, ul {
+  list-style-position: inside; /*bullet and number move closer to the text*/
+}
+/* .left-align {
+  text-align: left;
+} */
+hr {
+  width: 60%
+}
+/*gives more details regarding the links*/
+a:link {color: blue}
+a:visited {color: red}
+a:hover{color: lightblue}
+a:active {color: green}
