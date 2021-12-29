@@ -1,5 +1,5 @@
 # mary-portfolio
-Initial Portfolio
-#intro 
-#Background
-#Contact Information included
+## Initial Portfolio
+- intro 
+- Background
+- Contact Information
