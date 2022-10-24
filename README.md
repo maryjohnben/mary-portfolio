@@ -1,5 +1,9 @@
 # mary-portfolio
+
 Updates Coming Soon...
+The current portfolio is not updated. More changes and updates will be added shortly.
+
+
 ### Initial Portfolio
 - Intro 
 - Background
