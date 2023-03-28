@@ -42,7 +42,7 @@ nav a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 30%;
   border: 1px solid #000; /*picture border specified*/
   border-radius: 4px; /*use to give a slight curve to the picture border*/
 }
