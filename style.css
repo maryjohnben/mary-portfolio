@@ -50,23 +50,22 @@ footer {
   background-color: antiquewhite;
   padding: 4px;
 }
-section {
-  /* margin-top: 2em;
-  margin-right: 10em;
-  margin-left: 10em; */
-  /* margin: 2em 35em; display margin */
-}
+
 ol,
 ul {
   list-style-position: inside; /*bullet and number move closer to the text*/
+  align-items: center;
 }
 ol li{
   list-style: none;
+  /* text-align: center; */
 }
 /* .left-align {
   text-align: left;
 } */
-
+h1 h2 h3{ 
+  text-align: center;
+}
 /*gives more details regarding the links*/
 a:link {
   color: blue;
