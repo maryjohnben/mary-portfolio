@@ -60,6 +60,9 @@ ol,
 ul {
   list-style-position: inside; /*bullet and number move closer to the text*/
 }
+ol li{
+  list-style: none;
+}
 /* .left-align {
   text-align: left;
 } */
