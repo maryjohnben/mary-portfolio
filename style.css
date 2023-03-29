@@ -24,7 +24,7 @@ ul li
  {
   text-align: center;
   align-items: center;
-  margin: 0%;
+  /* margin: 0%; */
 }
 header > div {
   background-image: linear-gradient(to right, #b22222, #fff);
