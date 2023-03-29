@@ -12,12 +12,16 @@ p {
   /*all paragraph unless otherwise noted will be 16px*/
   font-size: 16px;
 }
-div,
+/* div,
 h2,
 nav,
-footer {
+footer,
+p,
+ol li,
+h1
+ {
   text-align: center;
-}
+} */
 header > div {
   background-image: linear-gradient(to right, #b22222, #fff);
   padding: 10px;
@@ -54,17 +58,21 @@ footer {
 ol,
 ul {
   list-style-position: inside; /*bullet and number move closer to the text*/
-  align-items: center;
+  /* align-items: center; */
 }
-ol li{
+ol li
+{
   list-style: none;
   /* text-align: center; */
 }
 /* .left-align {
   text-align: left;
 } */
-h1 h2 h3{ 
+h1, h2, h3
+{ 
   text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 /*gives more details regarding the links*/
 a:link {
