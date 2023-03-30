@@ -2,7 +2,7 @@
 
 #### Updates Coming Soon...
 
-<br> Updated portfolio with changes and more updates will be added shortly. Click [here](https://maryjohnben.github.io/mary-portfolio/) to view the current portfolio. </br>
+<br> Updated portfolio with changes and more updates will be added shortly. </br>
 
 ### Initial Portfolio
 - Intro 
@@ -11,3 +11,6 @@
 - Contact Information :
    - [Github](https://github.com/maryjohnben)
    - [LinkedIn](http://linkedin.com/in/mary-benjamin)
+
+HTML/CSS version available
+Currently working on full stack JavaScript based application. Updates will be added soon.
