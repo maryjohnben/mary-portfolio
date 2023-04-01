@@ -1,8 +1,6 @@
 # mary-portfolio
 
-#### Updates Coming Soon...
-
-<br> Updated portfolio with changes and more updates will be added shortly. </br>
+<br>
 
 ### Initial Portfolio
 - Intro 
