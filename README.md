@@ -12,5 +12,5 @@
    - [Github](https://github.com/maryjohnben)
    - [LinkedIn](http://linkedin.com/in/mary-benjamin)
 
-HTML/CSS version available
-Currently working on full stack JavaScript based application. Updates will be added soon.
+HTML/CSS version is ready to be viewed [here]
+Currently working on full stack JavaScript based application. Updates will be added shortly. 
