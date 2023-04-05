@@ -16,9 +16,10 @@ HTML/CSS version is ready to be viewed [here](https://maryjohnben.github.io/mary
 <p>
 Currently working on full stack JavaScript based application. Updates will be added shortly. 
 </p>
-Technologies to be used:
+<p> Technologies to be used: 
+
 - NextJS
 - ReactJS
 - JavaScript
 - PostgreSQL
-
+</p>
