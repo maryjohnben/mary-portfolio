@@ -16,16 +16,24 @@ div,
 nav,
 footer,
 p,
-ol li,
 h1,
 h2,
-h3,
-ul li
- {
+h3 {
   text-align: center;
   align-items: center;
+  
   /* margin: 0%; */
 }
+div.listContainer {
+  text-align: center;
+}
+
+ul.list,
+ol.list {
+  display: inline-block;
+  text-align: left;
+}
+
 header > div {
   background-image: linear-gradient(to right, #b22222, #fff);
   padding: 10px;
@@ -64,8 +72,7 @@ ul {
   list-style-position: inside; /*bullet and number move closer to the text*/
   align-items: center;
 }
-ol li
-{
+ol li {
   list-style: none;
   /* text-align: center; */
 }
