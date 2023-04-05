@@ -13,26 +13,27 @@ p {
   /*all paragraph unless otherwise noted will be 16px*/
   font-size: 16px;
 }
+
 div,
 nav,
 h1,
 h2,
-h3 {
+h3,
+div.content {
   text-align: center;
-  align-items: center;
 
   /* margin: 0%; */
 }
 div.foot {
-  align-items: center;
+  vertical-align: middle;
 }
 
-p {
-  text-align: left;
+div.content {
+  text-align: center;
 }
 
 div.listContainer {
-  text-align: center;
+  text-align: text-top;
 }
 
 ul.list,
