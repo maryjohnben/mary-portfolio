@@ -32,6 +32,8 @@ ul.list,
 ol.list {
   display: inline-block;
   text-align: left;
+  list-style-position: inside;
+  /* bullet and number move closer to the text */
 }
 
 header > div {
@@ -67,14 +69,8 @@ footer {
   padding: 4px;
 }
 
-ol,
-ul {
-  list-style-position: inside; /*bullet and number move closer to the text*/
-  align-items: center;
-}
 ol li {
   list-style: none;
-  /* text-align: center; */
 }
 /* .left-align {
   text-align: left;
