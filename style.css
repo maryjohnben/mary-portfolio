@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box; /*applied to the entire site, controls how box border is calculated*/
+  box-sizing: border-box;
+  /* applied to the entire site, controls how box border is calculated */
 }
 
 body {
@@ -14,16 +15,22 @@ p {
 }
 div,
 nav,
-footer,
-p,
 h1,
 h2,
 h3 {
   text-align: center;
   align-items: center;
-  
+
   /* margin: 0%; */
 }
+div.foot {
+  align-items: center;
+}
+
+p {
+  text-align: left;
+}
+
 div.listContainer {
   text-align: center;
 }
@@ -72,15 +79,7 @@ footer {
 ol li {
   list-style: none;
 }
-/* .left-align {
-  text-align: left;
-} */
-/* h1, h2, h3
-{ 
-  text-align: center;
-  margin-left: 0px;
-  margin-right: 0px;
-} */
+
 /*gives more details regarding the links*/
 a:link {
   color: blue;
