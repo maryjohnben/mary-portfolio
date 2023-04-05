@@ -10,7 +10,7 @@
    - [Github](https://github.com/maryjohnben)
    - [LinkedIn](http://linkedin.com/in/mary-benjamin)
 
-HTML/CSS version is ready to be viewed [here](maryjohnben.github.io/mary-portfolio.github.io/).
+HTML/CSS version is ready to be viewed [here](https://maryjohnben.github.io/mary-portfolio.github.io/).
 <br>
 - More styling and features will be added promptly.
 <p>
