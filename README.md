@@ -12,6 +12,9 @@
 
 HTML/CSS version is ready to be viewed [here](https://maryjohnben.github.io/mary-portfolio.github.io/).
 <br>
+Html
+Css
+Bootstrap
 - More styling and features will be added promptly.
 <p>
 Currently working on full stack JavaScript based application. Updates will be added shortly. 
