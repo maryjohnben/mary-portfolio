@@ -3,7 +3,7 @@
 <br>
 
 ### Initial Portfolio
-- Intro 
+- Introduction
 - Background
 - Projects
 - Contact Information :
