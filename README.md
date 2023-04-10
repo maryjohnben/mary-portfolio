@@ -2,7 +2,7 @@
 
 <br>
 
-### Initial Portfolio
+### Initial Portfolio in HTML/CSS. Full-stack application is in the development stage.
 - Introduction
 - Background
 - Projects
