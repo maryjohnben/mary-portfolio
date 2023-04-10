@@ -20,7 +20,7 @@ Tech used:
 - Git
 More styling and features will be added promptly.
 <p>
-Currently working on full stack JavaScript based application. Updates will be added shortly. 
+Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in full-stack-project folder.
 </p>
 <p> Technologies to be used: 
 
