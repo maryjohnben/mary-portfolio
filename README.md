@@ -18,7 +18,7 @@ Tech used:
 - CSS Bootstrap
 - Github
 - Git
-More styling and features will be added promptly.
+<p>More styling and features will be added promptly.</p>
 <p>
 Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in full-stack-project folder.
 </p>
