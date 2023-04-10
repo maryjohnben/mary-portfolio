@@ -2,7 +2,7 @@
 
 <br>
 
-### Initial Portfolio is build using HTML/CSS. Full-stack application is in the development stage.
+### Initial Portfolio is built using HTML/CSS. Full-stack application is in the development stage.
 - Introduction
 - Background
 - Projects
