@@ -2,7 +2,8 @@
 
 <br>
 
-### Initial Portfolio is built using HTML/CSS. Full-stack application is in the development stage.
+### Initial Portfolio is built using HTML/CSS. Full-stack application is in the development phase.
+#### Current project includes:
 - Introduction
 - Background
 - Projects
@@ -22,10 +23,11 @@ Tech used:
 <p>
 Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in full-stack-project folder.
 </p>
-<p> Technologies to be used: 
+<p> Technologies to be used in the full stack application: 
 
 - NextJS
 - ReactJS
 - JavaScript
 - PostgreSQL
+- nodeJS
 </p>
