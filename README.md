@@ -30,4 +30,5 @@ Currently working on full stack JavaScript based application. Updates will be ad
 - JavaScript
 - PostgreSQL
 - nodeJS
+- Material UI
 </p>
