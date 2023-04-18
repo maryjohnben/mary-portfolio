@@ -31,4 +31,6 @@ Currently working on full stack JavaScript based application. Updates will be ad
 - PostgreSQL
 - nodeJS
 - Material UI
+- HTML
+- CSS
 </p>
