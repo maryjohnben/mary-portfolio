@@ -11,7 +11,7 @@
    - [Github](https://github.com/maryjohnben)
    - [LinkedIn](http://linkedin.com/in/mary-benjamin)
 
-HTML/CSS version is ready to be viewed [here](https://maryjohnben.github.io/mary-portfolio/).
+HTML5/CSS3 version is ready to be viewed [here](https://maryjohnben.github.io/mary-portfolio/).
 <br>
 Tech used:
 - CSS3
