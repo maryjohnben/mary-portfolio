@@ -30,8 +30,8 @@ Currently working on full stack JavaScript based application. Updates will be ad
 - ReactJS
 - JavaScript
 - PostgreSQL
-- nodeJS
+- NodeJS
 - Material UI
-- HTML
-- CSS
+- HTML5
+- CSS3
 </p>
