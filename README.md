@@ -13,7 +13,7 @@
 
 HTML5/CSS3 version is ready to be viewed [here](https://maryjohnben.github.io/mary-portfolio/).
 <br>
-Tech used:
+Tech used in HTML/CSS version:
 - CSS3
 - HTML5
 - CSS Bootstrap
@@ -22,7 +22,7 @@ Tech used:
 - Visual Studio Code
 <p>More styling and features will be added promptly.</p>
 <p>
-Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in full-stack-project folder.
+Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in thd full-stack-project folder with the project.
 </p>
 <p> Technologies to be used in the full stack application: 
 
@@ -35,4 +35,5 @@ Currently working on full stack JavaScript based application. Updates will be ad
 - HTML5
 - CSS3
 - React Bootstrap
+- GitHub
 </p>
