@@ -20,9 +20,10 @@ Tech used in HTML/CSS version:
 - Github
 - Git Commands
 - Visual Studio Code
+- Chrome Browser
 <p>More styling and features will be added promptly.</p>
 <p>
-Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in thd full-stack-project folder with the project.
+Currently working on full stack JavaScript based application. Updates will be added shortly. Progress can be viewed in thd full-stack-project folder together with the html project.
 </p>
 <p> Technologies to be used in the full stack application: 
 
