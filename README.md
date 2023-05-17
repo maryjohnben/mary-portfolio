@@ -37,4 +37,6 @@ Currently working on full stack JavaScript based application. Updates will be ad
 - CSS3
 - React Bootstrap
 - GitHub
+- Git
+- chrome Devtools
 </p>
