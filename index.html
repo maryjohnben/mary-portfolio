@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mary Benjamin — Portfolio & Brand Lab</title>
+  <link rel="icon" type="image/jpeg" href="pictures/me/MB-new-dp.jpg" sizes="32x32" />
+  <link rel="icon" type="image/jpeg" href="pictures/me/MB-new-dp.jpg" sizes="16x16" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Lexend:wght@400;600&display=swap" rel="stylesheet" />
@@ -11,17 +13,18 @@
   <style>
     /* ===== DESIGN TOKENS ===== */
     :root{
-      --green:#2f5413; --dark:#121212; --light:#fafafa; --accent:#d6336c;
-      --text:#333;    --card:#fff;   --radius:12px;
+      --green:#2d5012; --dark:#121212; --light:#fafafa; --accent:#e91e63;
+      --text:#333; --card:#fff; --radius:12px;
       --shadow:0 4px 18px rgba(0,0,0,.08);
       --ts:.35s cubic-bezier(.4,0,.2,1);
+      --gradient:linear-gradient(135deg, #2d5012, #4a7c59);
     }
     body.dark{
       --light:#0f1117; --card:#1b1e2c; --text:#e1e1e1;
       --shadow:0 4px 20px rgba(0,0,0,.45);
     }
 
-    /* ===== RESET ===== */
+    /* ===== RESET & BASE ===== */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:Nunito,sans-serif;background:var(--light);color:var(--text);
@@ -32,175 +35,220 @@
     a{color:var(--green);font-weight:700;text-decoration:none}
     a:hover{color:var(--accent)}
     img,video{max-width:100%;display:block;border-radius:var(--radius)}
-    .container{width:min(92%,1200px);margin-inline:auto}
-
-    /* ===== UTILITIES ===== */
+    .container{width:min(95%,1200px);margin-inline:auto;padding:0 2rem}
     .fade{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
     .fade.show{opacity:1;transform:none}
-    @keyframes floater{from{transform:translateY(-8px);}to{transform:translateY(8px);}}
 
     /* ===== NAVBAR ===== */
     header{background:var(--card);box-shadow:0 2px 12px rgba(0,0,0,.06);position:sticky;top:0;z-index:9999}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
     .brand{display:flex;align-items:center;font-size:1.6rem;font-weight:800;color:var(--green)}
-    .brand img{width:46px;height:46px;border-radius:50%;margin-right:.7rem;border:3px solid var(--green)}
+    .brand img{width:46px;height:46px;border-radius:50%;margin-right:.7rem;border:3px solid var(--green);object-fit:cover}
     nav ul{display:flex;gap:1.7rem;list-style:none}
-    nav a{position:relative;padding-bottom:.15rem;color:inherit}
-    nav a::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--green);transition:width .3s}
-    nav a:hover::after{width:100%}
+    nav a{position:relative;padding-bottom:.15rem;color:inherit;font-weight:600}
+    nav a::before{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--green);transition:width .3s}
+    nav a:hover::before{width:100%}
     .toggle{background:none;border:2px solid var(--green);color:var(--green);padding:.35rem .9rem;border-radius:var(--radius);cursor:pointer;font-weight:700;transition:all .25s}
     .toggle:hover{background:var(--green);color:#fff}
     @media(max-width:700px){nav ul{display:none}.toggle{margin-left:auto}}
-    /* navbar avatar */
-.brand img{
-  width:46px;             /* keep the fixed size */
-  height:46px;
-  border-radius:50%;      /* perfect circle */
-  border:3px solid var(--green);
-  object-fit:cover;       /* <-- center‑crop so it always fills the circle */
-  object-position:center;
-}
-
 
     /* ===== HERO ===== */
-    #hero{display:flex;flex-wrap:wrap;align-items:center;gap:3rem;padding:6rem 0 4rem}
+    /* full‑width slab only in light mode */
+    body:not(.dark) #hero{
+      background:linear-gradient(135deg, #f8faf8 0%, #f0f7f0 100%);
+      position:relative;
+    }
+    body:not(.dark) #hero::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background-image:radial-gradient(rgba(47,84,19,.03) 1px,transparent 1px);
+      background-size:20px 20px;
+      pointer-events:none;
+    }
+    #hero .hero-inner{display:flex;flex-wrap:wrap;align-items:center;gap:3rem;padding:6rem 0 4rem}
     #hero .hero-text{flex:1 1 340px}
     #hero .hero-text p{font-size:1.18rem;margin:1.4rem 0 2.1rem}
-    .cta{background:var(--green);color:#fff;border:none;padding:.95rem 2.4rem;border-radius:var(--radius);
+    .cta{background:var(--gradient);color:#fff;border:none;padding:.95rem 2.4rem;border-radius:var(--radius);
          font-size:1.05rem;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);
-         transition:transform .25s}
-    .cta:hover{transform:translateY(-4px)}
-    #hero .hero-img{flex:1 1 400px;display:flex;justify-content:center;max-width:100%}
+         transition:all .25s;position:relative;overflow:hidden;letter-spacing:.5px}
+    .cta:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(47,84,19,.3);color:var(--accent)}
+    #hero .hero-img{flex:1 1 400px;display:flex;justify-content:center}
 
-    /* parallax hero art */
-    .parallax{position:relative;width:420px;height:420px;perspective:600px;max-width:100%}
-    .parallax .layer{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+    /* pulse planet */
+    .pulse-planet{
+      --size:420px;width:var(--size);height:var(--size);border-radius:50%;position:relative;
+      background:radial-gradient(circle at 45% 40%,rgba(255,255,255,.07) 0 20%,transparent 21%),
+                 radial-gradient(circle at center,rgba(47,84,19,.25) 0 45%,transparent 46%);
+      animation:pulse 2.8s ease-in-out infinite;box-shadow:0 0 30px rgba(0,0,0,.08) inset;
+    }
+    .pulse-planet::before,.pulse-planet::after{content:'';position:absolute;inset:0;border-radius:50%;border:3px solid #2f5413;
+      mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 0)}
+    .orbit{position:absolute;inset:-12px;border-radius:50%;border:2px dashed rgba(47,84,19,.5);animation:orbit 14s linear infinite}
+    .sprout{position:absolute;left:50%;top:12%;width:0;height:0;transform:translate(-50%,-50%);animation:sprout 2.8s ease-in-out infinite}
+    .sprout::before,.sprout::after{content:'';position:absolute;width:28px;height:56px;background:#2f5413;border-radius:50% 50% 0 50%;transform-origin:bottom center}
+    .sprout::before{transform:rotate(-50deg)} .sprout::after{transform:rotate(230deg);box-shadow:inset 0 0 0 3px rgba(255,255,255,.25)}
+    @keyframes pulse{0%,20%{box-shadow:0 0 0 0 rgba(47,84,19,.35) inset}50%{box-shadow:0 0 0 36px rgba(47,84,19,0) inset}100%{box-shadow:0 0 0 0 rgba(47,84,19,0) inset}}
+    @keyframes orbit{to{transform:rotate(1turn)}} @keyframes sprout{0%,40%,100%{transform:translate(-50%,-50%) scale(.7)}50%{transform:translate(-50%,-50%) scale(1)}}
 
     /* ===== ORAL BIO ===== */
     #bio{padding:5rem 0;background:var(--card);text-align:center}
     #bio .container{max-width:800px;display:flex;flex-direction:column;gap:1rem;align-items:center}
     #bio video{box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.06)}
-    #bio figcaption{max-width:680px;font-size:.9rem}
 
     /* ===== PROJECTS ===== */
     #projects{padding:5.5rem 0;background:var(--card)}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.4rem}
     .card{background:var(--light);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);
-          display:flex;flex-direction:column;gap:1.1rem;transition:transform .35s,box-shadow .35s}
-    .card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 12px 28px rgba(0,0,0,.14)}
+          display:flex;flex-direction:column;gap:1.1rem;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.15)}
+    .card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(47,84,19,.1),transparent);transition:left .6s}
+    .card:hover::before{left:100%}
     .meta{font-size:.8rem;text-transform:uppercase;color:var(--accent);font-weight:800}
     .links{margin-top:auto;display:flex;gap:1rem;flex-wrap:wrap}
-    .btn{padding:.45rem 1.1rem;border-radius:var(--radius);border:2px solid var(--green);
-         color:var(--green);font-weight:600;font-size:.85rem;letter-spacing:.02em;
-         box-shadow:inset 0 0 0 rgba(0,0,0,0);transition:all .25s}
-    .btn:hover{background:var(--green);color:#fff;box-shadow:inset 0 -2.4em 0 rgba(0,0,0,.06)}
-    /* uniform project thumbnails */
-/* ===== PROJECT THUMBNAILS – enhanced look ===== */
-/* === PROJECT THUMBNAILS: frame + lift === */
-.card img{
-  /* sizing */
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  object-position:center;
+    .btn{padding:.45rem 1.1rem;border-radius:var(--radius);background:var(--gradient);border:none;
+         color:#fff;font-weight:600;font-size:.85rem;transition:all .25s;position:relative;overflow:hidden;letter-spacing:.5px}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(47,84,19,.3)}
 
-  /* always‑on polish */
-  border-radius:8px;
-  outline:3px solid rgba(47,84,19,.15);     /* faint green‑tinted frame */
-  box-shadow:0 3px 10px rgba(0,0,0,.06);    /* light depth */
-  filter:brightness(.96) contrast(1.05);
+    /* thumbnail wrapper keeps equal height */
+    .thumb{aspect-ratio:16/9;background:var(--light);border-radius:8px;overflow:hidden;
+           display:flex;align-items:center;justify-content:center;
+           box-shadow:0 3px 10px rgba(0,0,0,.06);transition:transform .35s,box-shadow .35s}
+    .thumb img{max-width:100%;max-height:100%;object-fit:contain}
+    .card:hover .thumb{transform:scale(1.03);box-shadow:0 10px 22px rgba(0,0,0,.15)}
 
-  /* motion */
-  transition:transform .35s, filter .35s, box-shadow .35s;
-}
+    /* ===== SKILLS ===== */
+    #skills{padding:5rem 0;background:var(--card);position:relative}
+    #skills::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(47,84,19,.05) 1px,transparent 1px);
+      background-size:18px 18px;pointer-events:none}
+    .skills-title{margin-bottom:2.4rem}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+    .skill-card{background:var(--light);border-radius:var(--radius);padding:2rem 1.6rem 1.6rem;
+                box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.8rem;
+                transition:all .4s cubic-bezier(.4,0,.2,1);border-left:4px solid var(--green);position:relative}
+    body.dark .skill-card{background:rgba(255,255,255,.06)}
+    .skill-card:hover{transform:translateY(-6px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+    .skill-card::after{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--accent);transition:height .3s}
+    .skill-card:hover::after{height:100%}
+    .skill-card .icon{width:44px;height:44px;background:var(--green);color:#fff;border-radius:50%;
+                      display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .skill-card .icon svg{width:80%;height:80%;display:block}
+    .skill-card h3{font-size:1.05rem;margin:0}
+    .skill-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.35rem}
+    .skill-card li{position:relative;padding-left:1.15rem;font-size:.9rem}
+    .skill-card li::before{content:'›';position:absolute;left:0;top:0;color:var(--accent);font-weight:600;line-height:1}
 
-.card:hover img{
-  transform:scale(1.04);
-  filter:brightness(1) contrast(1.08);
-  box-shadow:0 10px 24px rgba(0,0,0,.16);   /* deeper shadow on hover */
-}
-    .card img{
-  outline:none;                     /* kill the green frame */
-  box-shadow:0 3px 10px rgba(0,0,0,.06);  /* keep the depth */
-}
-
+    /* ===== LIGHT‑THEME TILE POP ===== */
+    body:not(.dark) .card,
+    body:not(.dark) .skill-card,
+    body:not(.dark) #bio .container{
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,.04);
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    body:not(.dark) .card:hover,
+    body:not(.dark) .skill-card:hover{
+      box-shadow:0 14px 32px rgba(0,0,0,.12);
+    }
 
     /* ===== MASCOT ===== */
     #mascot{padding:5rem 0}
-    .mascot{display:flex;flex-wrap:wrap;align-items:center;gap:3rem}
-    .mascot img{width:240px;height:240px;border-radius:50%;object-fit:cover;border:4px solid var(--green);box-shadow:var(--shadow)}
-    .speech{flex:1 1 320px;background:var(--card);padding:2rem;border-radius:var(--radius);
-            box-shadow:var(--shadow);font-style:italic;font-size:1.05rem}
-    /* make mascot area the stage */
-.mascot{position:relative;overflow:hidden}
-
-/* decorative paw prints */
-.mascot::before,
-.mascot::after{
-  content:'🐾';
-  font-size:6rem;
-  color:rgba(47,84,19,.08);        /* light green tint */
-  position:absolute;
-  transform:rotate(-20deg);
-  user-select:none;
-  pointer-events:none;
-}
-.mascot::before{top:-20px;left:-10px;}
-.mascot::after {bottom:-30px;right:20px;transform:rotate(15deg);}
-
-/* wrap image so we can hang a tag */
-.mascot-figure{position:relative;display:inline-block}
-
-/* collar tag */
-.tag{
-  position:absolute;
-  bottom:-14px;left:50%;
-  width:22px;height:22px;
-  background:var(--accent);
-  border-radius:50%;
-  border:3px solid #fff;
-  transform:translateX(-50%);
-  box-shadow:0 2px 6px rgba(0,0,0,.15);
-  animation:swing 2.6s ease-in-out infinite;
-}
-@keyframes swing{
-  0%,100%{transform:translateX(-50%) rotate(-6deg);}
-  50%    {transform:translateX(-50%) rotate(6deg);}
-}
-.mascot-figure img{
-  transition:transform .35s;
-}
-.mascot-figure:hover img{
-  transform:scale(1.04) rotate(-3deg);
-}
-/* give the tag a wider swing when hovered */
-.mascot-figure:hover .tag{
-  animation:swingWide 1.2s ease-in-out infinite;
-}
-@keyframes swingWide{
-  0%,100%{transform:translateX(-50%) rotate(-12deg);}
-  50%    {transform:translateX(-50%) rotate(12deg);}
-}
+    .mascot{display:flex;flex-wrap:wrap;align-items:center;gap:3rem;position:relative;overflow:hidden}
+    .mascot::before,.mascot::after{content:'🐾';font-size:6rem;color:rgba(47,84,19,.08);position:absolute;pointer-events:none}
+    .mascot::before{top:-20px;left:-10px;transform:rotate(-20deg)}
+    .mascot::after{bottom:-30px;right:20px;transform:rotate(15deg)}
+    .mascot-figure{position:relative;display:inline-block}
+    .mascot-figure img{width:240px;height:240px;border-radius:50%;object-fit:cover;border:4px solid var(--green);box-shadow:var(--shadow);transition:transform .35s}
+    .mascot-figure:hover img{transform:scale(1.04) rotate(-3deg)}
+    .tag{position:absolute;bottom:-14px;left:50%;width:22px;height:22px;background:var(--accent);border-radius:50%;border:3px solid #fff;
+         transform:translateX(-50%);box-shadow:0 2px 6px rgba(0,0,0,.15);animation:swing 2.6s ease-in-out infinite}
+    @keyframes swing{0%,100%{transform:translateX(-50%) rotate(-6deg)}50%{transform:translateX(-50%) rotate(6deg)}}
+    .mascot-figure:hover .tag{animation:swingWide 1.2s ease-in-out infinite}
+    @keyframes swingWide{0%,100%{transform:translateX(-50%) rotate(-12deg)}50%{transform:translateX(-50%) rotate(12deg)}}
+    .speech{flex:1 1 320px;background:var(--card);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);font-style:italic;font-size:1.05rem}
 
     /* ===== FOOTER ===== */
-    footer{background:var(--dark);color:#c7c9d9;text-align:center;padding:3.8rem 1rem;font-size:.9rem}
+    footer{background:linear-gradient(135deg, var(--dark), #1a1a1a);color:#c7c9d9;text-align:center;padding:3.8rem 1rem;font-size:.9rem;position:relative}
+    footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent)}
     footer a{color:#fff;text-decoration:underline}
-  /* ===== DARK‑THEME CONTRAST PATCH ===== */
-body.dark h1,
-body.dark h2,
-body.dark h3{           /* bright headings */
-  color:#fafafa;
+
+    /* ===== DARK‑THEME CONTRAST ===== */
+    body.dark h1,body.dark h2,body.dark h3{color:#fafafa}
+    body.dark a{color:#9fda8a} body.dark a:hover{color:#d05b8a}
+    body.dark .meta{color:#ff8fb1}
+    /* ── Ultra‑crisp cards & skill tiles ───────────────────────────── */
+.card,
+.skill-card,
+#bio .container{
+  position:relative;                         /* allow accent layer */
+  background:rgba(255,255,255,.96);          /* bright base even in light */
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(0,0,0,.12);    /* deeper default shadow */
+  transition:transform .35s, box-shadow .35s;
 }
 
-body.dark a{            /* links */
-  color:#9fda8a;
-}
-body.dark a:hover{
-  color:#d05b8a;
+/* accent color wash inside card */
+.card::before,
+.skill-card::before,
+#bio .container::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,
+              rgba(47,84,19,.035) 0%,        /* green tint  */
+              rgba(214,51,108,.025) 100%);   /* pink tint   */
+  pointer-events:none;
+  mix-blend-mode:overlay;                    /* subtle, theme‑safe */
 }
 
-body.dark .meta{        /* card tag line */
-  color:#ff8fb1;
+/* lift & glow on hover */
+.card:hover,
+.skill-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 38px rgba(0,0,0,.18);
+}
+
+/* tweak dark‑theme brightness so tiles still pop */
+body.dark .card,
+body.dark .skill-card,
+body.dark #bio .container{
+  background:#1c1e29;                       /* brighter than dark page */
+  box-shadow:0 12px 30px rgba(0,0,0,.6);
+}
+/* ═══ LIGHT‑THEME: make every tile pop ═══════════════════════════════ */
+body:not(.dark) .card,
+body:not(.dark) .skill-card,
+body:not(.dark) #bio .container{
+  position:relative;
+  background:#ffffff;                         /* pure white slab */
+  border:1px solid rgba(0,0,0,.08);           /* crisp outline  */
+  border-radius:var(--radius);
+  box-shadow:0 12px 28px rgba(0,0,0,.12);     /* deeper base shadow */
+  overflow:hidden;
+  transition:transform .35s, box-shadow .35s;
+}
+
+/* subtle brand‑gradient wash */
+body:not(.dark) .card::before,
+body:not(.dark) .skill-card::before,
+body:not(.dark) #bio .container::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,
+              rgba(47,84,19,.08) 0%,         /* green corner  */
+              rgba(214,51,108,.05) 100%);    /* pink corner   */
+  pointer-events:none;
+  mix-blend-mode:overlay;                    /* gentle tint   */
+}
+
+/* extra lift on hover */
+body:not(.dark) .card:hover,
+body:not(.dark) .skill-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
 }
 
   </style>
@@ -210,11 +258,12 @@ body.dark .meta{        /* card tag line */
   <!-- ===== NAVBAR ===== -->
   <header>
     <div class="container nav">
-      <a class="brand" href="#hero"><img src="pictures/me/MB-new-dp.jpg" alt="Mary Benjamin avatar">Mary&nbsp;Benjamin</a>
+      <a class="brand" href="#hero"><img src="pictures/me/MB-new-dp.jpg" alt="Mary Benjamin avatar">Mary Benjamin</a>
       <nav>
         <ul>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#bio">Oral&nbsp;Bio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#bio">Oral Bio</a></li>
           <li><a href="#mascot">Mascot</a></li>
         </ul>
       </nav>
@@ -223,98 +272,22 @@ body.dark .meta{        /* card tag line */
   </header>
 
   <!-- ===== HERO ===== -->
-  <section id="hero" class="container fade">
-    <div class="hero-text">
-      <h1>Building tech that uplifts <span style="color:var(--green)">people&nbsp;&amp;&nbsp;planet</span></h1>
-      <p>NASA intern &amp; full‑stack engineer merging AI with human‑centric design — one pixel, one API at a time.</p>
-      <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Explore Work</button>
+  <section id="hero" class="fade">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Building tech that uplifts <span style="color:var(--green)">people&nbsp;&amp;&nbsp;planet</span></h1>
+        <p>NASA intern &amp; full‑stack engineer merging AI with human‑centric design — one pixel, one API at a time.</p>
+        <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Explore Work</button>
+      </div>
+      <div class="hero-img"><div class="pulse-planet" aria-hidden="true"><span class="orbit"></span><span class="sprout"></span></div></div>
     </div>
-
-    <!-- parallax illustration -->
-    
-      <!-- single inline illustration, still wrapped in parallax div -->
-<!-- hero image (inline CSS globe) -->
-<!-- hero image — pulsing planet -->
-<!-- hero image — creative pulse‑planet -->
-<div class="hero-img">
-  <div class="pulse-planet" aria-hidden="true">
-    <span class="orbit"></span>
-    <span class="sprout"></span>
-  </div>
-
-  <style>
-    /* root globe */
-    .pulse-planet{
-      --size:420px;
-      width:var(--size);height:var(--size);max-width:100%;
-      position:relative;border-radius:50%;
-      background:radial-gradient(circle at 45% 40%,rgba(255,255,255,.07) 0 20%,transparent 21%),
-                 radial-gradient(circle at center,rgba(47,84,19,.25) 0 45%,transparent 46% 100%);
-      animation:pulse 2.8s ease-in-out infinite;
-      box-shadow:0 0 30px rgba(0,0,0,.08) inset;
-    }
-    /* twin outline rings */
-    .pulse-planet::before,
-    .pulse-planet::after{
-      content:'';
-      position:absolute;inset:0;border-radius:50%;
-      border:3px solid #2f5413;
-      mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 0);
-    }
-
-    /* dotted orbit ring */
-    .orbit{
-      position:absolute;inset:-12px; /* bigger than planet */
-      border-radius:50%;
-      border:2px dashed rgba(47,84,19,.5);
-      animation:orbit 14s linear infinite;
-    }
-
-    /* sprouting leaf (two ovals) */
-    .sprout{
-      position:absolute;left:50%;top:12%;
-      width:0;height:0;transform:translate(-50%,-50%);
-      animation:sproutGrow 2.8s ease-in-out infinite;
-    }
-    .sprout::before,
-    .sprout::after{
-      content:'';position:absolute;width:28px;height:56px;
-      background:#2f5413;border-radius:50% 50% 0 50%;
-      transform-origin:bottom center;
-    }
-    .sprout::before{transform:rotate(-50deg);}
-    .sprout::after {transform:rotate(230deg);}
-    /* leaf vein */
-    .sprout::after{box-shadow:inset 0 0 0 3px rgba(255,255,255,.25);}
-
-    /* animations */
-    @keyframes pulse{
-      0%,20% {box-shadow:0 0 0 0 rgba(47,84,19,.35) inset;}
-      50%    {box-shadow:0 0 0 36px rgba(47,84,19,0) inset;}
-      100%   {box-shadow:0 0 0 0 rgba(47,84,19,0) inset;}
-    }
-    @keyframes orbit{to{transform:rotate(1turn);}}
-    @keyframes sproutGrow{
-      0%,40%,100%{transform:translate(-50%,-50%) scale(.7);}
-      50%        {transform:translate(-50%,-50%) scale(1);}
-    }
-  </style>
-</div>
-
-
-
-
   </section>
 
   <!-- ===== ORAL BIO VIDEO ===== -->
   <section id="bio" class="fade">
     <h2>Oral Bio</h2>
     <div class="container">
-      <video src="Browser Capture @202-s1-full.mp4"
-             controls
-             poster="pictures/me/MB-new-dp.jpg"
-             preload="metadata"
-             playsinline></video>
+      <video src="Browser Capture @202-s1-full.mp4" controls poster="pictures/me/MB-new-dp.jpg" preload="metadata" playsinline></video>
       <figcaption>A short introduction in my own words — background, passions, and what drives my work.</figcaption>
     </div>
   </section>
@@ -324,40 +297,72 @@ body.dark .meta{        /* card tag line */
     <div class="container">
       <h2>Featured Projects</h2>
       <div class="grid">
-        <!-- Card 1 -->
         <div class="card">
-          <img src="pictures/Garden/garden_homepage.png" alt="Growing Garden">
+          <div class="thumb"><img src="pictures/Garden/garden_homepage.png" alt="Growing Garden"></div>
           <span class="meta">React • Flask • Gemini AI • MongoDB</span>
           <h4>Growing Garden 101</h4>
-          <p>Location‑aware gardening coach that taps Gemini AI + live weather to deliver custom care plans. Flask API &amp; Vite‑React front‑end.</p>
-          <div class="links">
-            <a class="btn" href="#">Live Demo</a>
-            <a class="btn" href="https://github.com/maryjohnben/growingGarden101.git">GitHub</a>
-          </div>
+          <p>Location‑aware gardening coach that taps Gemini AI + live weather to deliver custom care plans.</p>
+          <div class="links"><a class="btn" href="https://growinggarden101-front.onrender.com/" target="_blank">Live Demo</a><a class="btn" href="https://github.com/maryjohnben/growingGarden101.git">GitHub</a></div>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
-          <img src="pictures/data_science/decision_tree_with_cluster.PNG" alt="Heart‑Attack ML">
+          <div class="thumb"><img src="pictures/data_science/decision_tree_with_cluster.PNG" alt="Heart‑Attack ML"></div>
           <span class="meta">R • Weka • Tableau</span>
           <h4>Heart‑Attack Risk Model</h4>
-          <p>Ensembled CART / C5.0 / RandomForest across 918 patients — ROC‑AUC 0.87 and +7 % precision after K‑means cohort clustering. Tableau dashboard with SHAP insights.</p>
-          <div class="links">
-            <a class="btn" href="#">Read Report</a>
-            <a class="btn" href="#">GitHub</a>
-          </div>
+          <p>Ensembled CART/C5.0/RandomForest across 918 patients — ROC‑AUC 0.87 and +7 % precision after K‑means.</p>
+          <div class="links"><a class="btn" href="#">Read Report</a><a class="btn" href="#">GitHub</a></div>
         </div>
 
-        <!-- Card 3 -->
         <div class="card">
-          <img src="pictures/me/MB-new-dp.jpg" alt="NASA backend">
+          <div class="thumb"><img src="pictures/me/MB-new-dp.jpg" alt="NASA backend"></div>
           <span class="meta">Python • GraphQL • InfluxDB</span>
           <h4>Wearable Health Telemetry</h4>
-          <p>NASA JSC backend streaming 1 M+ vitals/day at 99.9 % uptime and cutting query latency 65 %. Powers React/Flutter dashboards for flight‑crew trainers.</p>
-          <div class="links">
-            <a class="btn" href="#">Case Study</a>
-          </div>
+          <p>NASA JSC backend streaming 1 M+ vitals/day at 99.9 % uptime and cutting query latency 65 %.</p>
+          <div class="links"><a class="btn" href="#">Case Study</a></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="fade">
+    <div class="container">
+      <h2 class="skills-title">Toolbox &amp; Tech I Love</h2>
+      <div class="skills-grid">
+        <!-- Languages -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8.1 18 2 12l6.1-6 1.4 1.4L5 12l4.5 4.6L8.1 18ZM15.9 18l-1.4-1.4L19 12l-4.5-4.6L15.9 6 22 12l-6.1 6Z"/></svg></span>
+          <h3>Languages</h3>
+          <ul><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>R</li><li>SQL</li><li>GraphQL</li></ul>
+        </article>
+
+        <!-- Frameworks -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 8l10 5 10-5-10-5Zm0 7L2 15l10 5 10-5-10-5Zm0 7-7.25-3.62-2.25 1.12L12 22l9.5-4.5-2.25-1.12L12 17Z"/></svg></span>
+          <h3>Frameworks</h3>
+          <ul><li>React</li><li>Vite</li><li>Flask</li><li>Express</li><li>scikit‑learn</li></ul>
+        </article>
+
+        <!-- Cloud & DevOps -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 18H6a4 4 0 0 1-.2-8A6 6 0 0 1 18 7a5 5 0 0 1 1 11Z"/></svg></span>
+          <h3>Cloud & DevOps</h3>
+          <ul><li>AWS ECS</li><li>AWS S3</li><li>Azure Functions</li><li>Docker</li><li>GitHub Actions / CI‑CD</li></ul>
+        </article>
+
+        <!-- Data & Storage -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3c-5 0-9 1.34-9 3v12c0 1.66 4 3 9 3s9-1.34 9-3V6c0-1.66-4-3-9-3Zm0 2c4 0 7 .9 7 2s-3 2-7 2-7-.9-7-2 3-2 7-2Zm0 14c-4 0-7-.9-7-2v-2c1.6.83 4.3 1.25 7 1.25s5.4-.42 7-1.25v2c0 1.1-3 2-7 2Zm0-5c-4 0-7-.9-7-2v-2c1.6.83 4.3 1.25 7 1.25s5.4-.42 7-1.25v2c0 1.1-3 2-7 2Z"/></svg></span>
+          <h3>Data & Storage</h3>
+          <ul><li>PostgreSQL</li><li>MongoDB</li><li>InfluxDB</li><li>Tableau</li><li>Looker</li></ul>
+        </article>
+
+        <!-- Practices -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8.94-3.5-1.43-1.1.25-1.8-1.62-1-1.23 1.3a8.1 8.1 0 0 0-1.74-.52l-.46-1.77h-2.6l-.46 1.77c-.63.12-1.21.3-1.74.52L6.86 7.1l-1.62 1 .25 1.8-1.43 1.1v 2l1.43 1.1-.25 1.8 1.62 1 1.23-1.3c.53.22 1.11.4 1.74.52l.46 1.77h2.6l.46-1.77c.63-.12 1.21-.3 1.74-.52l1.23 1.3 1.62-1-.25-1.8 1.43-1.1v-2Z"/></svg></span>
+          <h3>Practices</h3>
+          <ul><li>TDD</li><li>Pair Programming</li><li>Agile / Scrum</li><li>Code Reviews</li></ul>
+        </article>
       </div>
     </div>
   </section>
@@ -366,37 +371,26 @@ body.dark .meta{        /* card tag line */
   <section id="mascot" class="fade">
     <div class="container mascot">
       <div class="mascot-figure">
-  <img src="pictures/Pet/christo.webp.webp"
-       srcset="pictures/Pet/christo.webp.webp 600w, pictures/Pet/christo-picture.jpg 260w"
-       sizes="(min-width:600px) 260px, 100vw"
-       alt="Fluffy orange cat wearing a tie">
-  <span class="tag"></span><!-- collar tag -->
-</div>
+        <img src="pictures/Pet/christo.webp.webp" alt="Fluffy orange cat wearing a tie">
+        <span class="tag"></span>
+      </div>
       <div class="speech">“Meow‑tastic code! Now feed me treats.” — Christo, Chief Morale Officer</div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© 2025 Mary Benjamin — let’s build something stellar. Email
-      <a href="mailto:mary.benjamin@example.com">mary.benjamin@example.com</a>.
-    </p>
-  </footer>
+  <footer><p>© 2025 Mary Benjamin — let’s build something stellar. Email <a href="mailto:marybenjamin713@gmail.com">marybenjamin713@gmail.com</a>.</p></footer>
 
   <!-- ===== SCRIPTS ===== -->
   <script>
     /* dark‑mode toggle */
-    document.getElementById('themeBtn').addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
+    document.getElementById('themeBtn').addEventListener('click',()=>document.body.classList.toggle('dark'));
 
     /* scroll‑reveal */
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
-      });
-    }, { threshold:0.15 });
-    document.querySelectorAll('.fade').forEach(el => io.observe(el));
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+    },{threshold:.15});
+    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
