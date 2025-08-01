@@ -581,6 +581,37 @@ body.dark .pulse-planet {
   box-shadow: 0 8px 25px rgba(47, 84, 19, 0.3);
 }
 
+/* ===== ORAL BIO SECTION ===== */
+#bio {
+  padding: 5rem 0;
+  background: var(--light);
+}
+
+#bio h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark);
+}
+
+#bio video {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#bio figcaption {
+  text-align: center;
+  font-style: italic;
+  color: var(--text);
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
 /* ===== SKILLS SECTION ===== */
 #skills {
   padding: 5rem 0;
@@ -800,8 +831,8 @@ body.dark .skill-card li {
 
 /* ===== FOOTER ===== */
 footer {
-  background: var(--dark);
-  color: white;
+  background: #1a1a1a;
+  color: #e0e0e0;
   text-align: center;
   padding: 3rem 0;
   margin-top: 4rem;
@@ -810,7 +841,7 @@ footer {
 
 /* Dark theme footer */
 body.dark footer {
-  background: #000;
+  background: #0a0a0a;
 }
 
 .footer-links {
@@ -825,7 +856,7 @@ body.dark footer {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fff;
+  color: #e0e0e0;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
