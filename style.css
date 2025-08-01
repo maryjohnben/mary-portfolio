@@ -220,10 +220,15 @@ nav a:hover::before {
 }
 
 /* ===== HERO SECTION ===== */
+#hero {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
 /* full‑width slab only in light mode */
 body:not(.dark) #hero {
   background: linear-gradient(135deg, #f8faf8 0%, #f0f7f0 100%);
-  position: relative;
 }
 
 body:not(.dark) #hero::before {
@@ -241,7 +246,6 @@ body:not(.dark) #hero::before {
 /* Dark theme hero */
 body.dark #hero {
   background: linear-gradient(135deg, #0f1117 0%, #1a1a1a 100%);
-  position: relative;
 }
 
 body.dark #hero::before {
@@ -262,6 +266,11 @@ body.dark #hero::before {
   align-items: center;
   gap: 3rem;
   padding: 6rem 0 4rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #hero .hero-text {
