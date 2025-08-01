@@ -46,9 +46,7 @@ body.dark .thumb {
   background: var(--light);
 }
 
-body.dark .mascot {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-}
+
 
 body.dark .toggle {
   border-color: var(--green);
