@@ -1,39 +1,41 @@
-# Mary Benjamin — Portfolio & Brand Lab
+# Mary Benjamin — Portfolio
 
 A modern, responsive portfolio website showcasing Mary Benjamin's work as a NASA intern and full-stack engineer. Built with vanilla HTML, CSS, and JavaScript, featuring a clean design that emphasizes human-centric technology and sustainable development.
 
 ## 🌟 Features
 
 - **Responsive Design**: Optimized for all devices and screen sizes
-- **Dark/Light Theme Toggle**: User-controlled theme switching with smooth transitions
+- **Dark/Light Theme Toggle**: User-controlled theme switching with smooth transitions and local storage persistence
+- **Interactive Modals**: Dynamic project showcases with embedded videos and PDFs
 - **Smooth Animations**: CSS animations and transitions for enhanced UX
 - **Accessibility Focused**: Semantic HTML, ARIA labels, and keyboard navigation
 - **Performance Optimized**: Fast loading with optimized images and minimal dependencies
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [Mary Benjamin Portfolio](https://your-deployment-url.com)
+Visit the live portfolio: [Mary Benjamin Portfolio](https://maryjohnben.github.io/mary-portfolio/)
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Styling**: Custom CSS with CSS Grid and Flexbox
 - **Animations**: CSS animations and transitions
-- **Icons**: SVG icons and emoji
-- **Fonts**: Google Fonts (Inter)
+- **Icons**: SVG icons and Bootstrap Icons
+- **Fonts**: Google Fonts (Lexend, Nunito)
+- **Deployment**: GitHub Pages
 
 ## 📁 Project Structure
 
 ```
 mary-portfolio/
 ├── index.html              # Main portfolio page
+├── style.css               # Custom CSS styles
+├── script.js               # JavaScript functionality
 ├── pictures/               # Image assets
 │   ├── me/                # Profile and personal images
 │   ├── garden/            # Growing Garden 101 project images
-│   ├── data_science/      # ML/Data Science project images
 │   ├── wearable/          # NASA wearable project images
 │   └── pet/               # Mascot images
-├── full-stack-project/    # Additional project files
 └── README.md              # This file
 ```
 
@@ -41,13 +43,13 @@ mary-portfolio/
 
 ### Hero Section
 - Professional introduction with mission statement
+- Animated pulse planet with orbiting elements
 - Call-to-action for project exploration
-- Animated visual elements
 
 ### Projects Showcase
-- **Growing Garden 101**: React/Flask app with Gemini AI integration
-- **Heart-Attack Risk Model**: ML model with R, Weka, and Tableau
-- **NASA Wearable Health Telemetry**: Python backend with GraphQL and InfluxDB
+- **Growing Garden 101**: React/Flask app with Gemini AI integration and Echo360 video presentation
+- **PCA Clustering Heart Attack Risk Model**: ML model with R, Weka, and comprehensive data analysis
+- **NASA Wearable Health Telemetry**: Python backend with GraphQL and InfluxDB for health monitoring
 
 ### Skills & Technologies
 - **Languages**: Python, JavaScript, TypeScript, R, SQL, GraphQL
@@ -69,12 +71,13 @@ mary-portfolio/
 - **Clean & Modern**: Minimalist design with strategic use of color
 - **Accessible**: WCAG compliant with proper contrast and navigation
 - **Performance**: Optimized for speed and user experience
+- **Interactive**: Engaging modals and smooth transitions
 
 ## 🚀 Getting Started
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/mary-portfolio.git
+   git clone https://github.com/maryjohnben/mary-portfolio.git
    cd mary-portfolio
    ```
 
@@ -104,11 +107,12 @@ The color scheme can be customized by modifying CSS custom properties in the `:r
 
 ```css
 :root {
-  --primary: #your-color;
-  --secondary: #your-color;
-  --accent: #your-color;
-  --background: #your-color;
-  --text: #your-color;
+  --green: #2d5012;
+  --dark: #121212;
+  --light: #fafafa;
+  --accent: #e91e63;
+  --text: #333;
+  --card: #fff;
 }
 ```
 
@@ -134,7 +138,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-- **Portfolio**: [mary-portfolio.com](https://your-portfolio-url.com)
+- **Portfolio**: [maryjohnben.github.io/mary-portfolio/](https://maryjohnben.github.io/mary-portfolio/)
 - **LinkedIn**: [Mary Benjamin](https://linkedin.com/in/marybenjamin)
 - **GitHub**: [@maryjohnben](https://github.com/maryjohnben)
 
