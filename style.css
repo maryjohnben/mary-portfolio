@@ -725,8 +725,7 @@ body.dark .skill-card {
 
 /* Dark theme skills */
 body.dark .skill-card li {
-  background: rgba(47, 84, 19, 0.2);
-  color: #4a7c59;
+  color: #e1e1e1;
 }
 
 /* ===== MASCOT SECTION ===== */
