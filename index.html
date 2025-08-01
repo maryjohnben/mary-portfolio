@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mary Benjamin — Portfolio & Brand Lab</title>
+  <link rel="icon" type="image/jpeg" href="pictures/me/mb-new-dp.JPG" sizes="32x32" />
+  <link rel="icon" type="image/jpeg" href="pictures/me/mb-new-dp.JPG" sizes="16x16" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Lexend:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#hero"><img src="pictures/me/mb-new-dp.jpg" alt="Mary Benjamin avatar">Mary Benjamin</a>
+      <nav>
+        <ul>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#bio" class="nav-link">Oral Bio</a></li>
+          <li><a href="#mascot" class="nav-link">Mascot</a></li>
+        </ul>
+      </nav>
+      <button class="toggle" id="themeBtn">🌙</button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="fade">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Building tech that uplifts <span style="color:var(--green)">people&nbsp;&amp;&nbsp;planet</span></h1>
+        <p>NASA intern &amp; full‑stack engineer merging AI with human‑centric design — one pixel, one API at a time.</p>
+        <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Explore Work</button>
+      </div>
+      <div class="hero-img"><div class="pulse-planet" aria-hidden="true"><span class="orbit"></span><span class="sprout"></span></div></div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="fade">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb">
+            <img src="pictures/garden/garden_homepage.png" alt="Growing Garden" class="clickable-image" onclick="openGardenModal()">
+            <div class="image-overlay" onclick="openGardenModal()">
+              <svg viewBox="0 0 24 24" width="32" height="32">
+                <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+              </svg>
+            </div>
+          </div>
+          <span class="meta">React • Flask • Gemini AI • MongoDB</span>
+          <h4>Growing Garden 101</h4>
+          <p>Location-aware gardening coach that taps Gemini AI + live weather to deliver custom care plans.</p>
+          <div class="links">
+            <a class="btn" href="https://growinggarden101-front.onrender.com/" target="_blank">Live Demo</a>
+            <a class="btn" href="https://github.com/maryjohnben/growingGarden101.git">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb">
+            <img src="pictures/data_science/decision_tree_with_cluster.PNG" alt="Heart‑Attack ML" class="clickable-image" onclick="openPcaModal()">
+            <div class="image-overlay" onclick="openPcaModal()">
+              <svg viewBox="0 0 24 24" width="32" height="32">
+                <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+              </svg>
+            </div>
+          </div>
+          <span class="meta">R • Weka • Tableau</span>
+          <h4>Heart‑Attack Risk Model</h4>
+          <p>Ensembled CART/C5.0/RandomForest across 918 patients — ROC‑AUC 0.87 and +7 % precision after K‑means.</p>
+          <div class="links">
+            <a class="btn" href="#" onclick="openPdfModal()">Read Report</a>
+            <a class="btn" href="https://github.com/maryjohnben/predicting_heart_attack_using_supervised_learning_ml.git" target="_blank">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="thumb">
+            <img src="pictures/wearable/wearable.png" alt="Wearable Health Telemetry" class="clickable-image" onclick="openWearableModal()">
+            <div class="image-overlay" onclick="openWearableModal()">
+              <svg viewBox="0 0 24 24" width="32" height="32">
+                <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+              </svg>
+            </div>
+          </div>
+          <span class="meta">Python • GraphQL • InfluxDB</span>
+          <h4>Wearable Health Telemetry</h4>
+          <p>Cloud-connected backend streaming 1 M+ vitals/day at 99.9 % uptime and cutting query latency 65 %.</p>
+          <div class="links">
+            <a class="btn" href="#" onclick="openWearablePdfModal()">Case Study</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="fade">
+    <div class="container">
+      <h2 class="skills-title">Toolbox & Tech I Love</h2>
+      <div class="skills-grid">
+        <!-- Languages -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8.1 18 2 12l6.1-6 1.4 1.4L5 12l4.5 4.6L8.1 18ZM15.9 18l-1.4-1.4L19 12l-4.5-4.6L15.9 6 22 12l-6.1 6Z"/></svg></span>
+          <h3>Languages</h3>
+          <ul><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>R</li><li>SQL</li><li>GraphQL</li></ul>
+        </article>
+
+        <!-- Frameworks -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 8l10 5 10-5-10-5Zm0 7L2 15l10 5 10-5-10-5Zm0 7-7.25-3.62-2.25 1.12L12 22l9.5-4.5-2.25-1.12L12 17Z"/></svg></span>
+          <h3>Frameworks</h3>
+          <ul><li>React</li><li>Vite</li><li>Flask</li><li>Express</li><li>scikit‑learn</li></ul>
+        </article>
+
+        <!-- Cloud & DevOps -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 18H6a4 4 0 0 1-.2-8A6 6 0 0 1 18 7a5 5 0 0 1 1 11Z"/></svg></span>
+          <h3>Cloud & DevOps</h3>
+          <ul><li>AWS ECS</li><li>AWS S3</li><li>Azure Functions</li><li>Docker</li><li>GitHub Actions / CI‑CD</li></ul>
+        </article>
+
+        <!-- Data & Storage -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3c-5 0-9 1.34-9 3v12c0 1.66 4 3 9 3s9-1.34 9-3V6c0-1.66-4-3-9-3Zm0 2c4 0 7 .9 7 2s-3 2-7 2-7-.9-7-2 3-2 7-2Zm0 14c-4 0-7-.9-7-2v-2c1.6.83 4.3 1.25 7 1.25s5.4-.42 7-1.25v2c0 1.1-3 2-7 2Zm0-5c-4 0-7-.9-7-2v-2c1.6.83 4.3 1.25 7 1.25s5.4-.42 7-1.25v2c0 1.1-3 2-7 2Z"/></svg></span>
+          <h3>Data & Storage</h3>
+          <ul><li>PostgreSQL</li><li>MongoDB</li><li>InfluxDB</li><li>Tableau</li><li>Looker</li></ul>
+        </article>
+
+        <!-- Practices -->
+        <article class="skill-card">
+          <span class="icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8.94-3.5-1.43-1.1.25-1.8-1.62-1-1.23 1.3a8.1 8.1 0 0 0-1.74-.52l-.46-1.77h-2.6l-.46 1.77c-.63.12-1.21.3-1.74.52L6.86 7.1l-1.62 1 .25 1.8-1.43 1.1v 2l1.43 1.1-.25 1.8 1.62 1 1.23-1.3c.53.22 1.11.4 1.74.52l.46 1.77h2.6l.46-1.77c.63-.12 1.21-.3 1.74-.52l1.23 1.3 1.62-1-.25-1.8 1.43-1.1v-2Z"/></svg></span>
+          <h3>Practices</h3>
+          <ul><li>TDD</li><li>Pair Programming</li><li>Agile / Scrum</li><li>Code Reviews</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORAL BIO ===== -->
+  <section id="bio" class="fade">
+    <div class="container">
+      <h2>Oral Bio</h2>
+      <video src="pictures/me/about-me.mp4" controls poster="pictures/me/mb-new-dp.jpg" preload="metadata" playsinline></video>
+      <figcaption>A short introduction in my own words — background, passions, and what drives my work.</figcaption>
+    </div>
+  </section>
+
+  <!-- ===== MASCOT ===== -->
+  <section id="mascot" class="fade">
+    <div class="container mascot">
+      <div class="mascot-figure">
+        <img src="pictures/pet/christo.webp.webp" alt="Fluffy orange cat wearing a tie">
+        <span class="tag"></span>
+      </div>
+      <div class="speech">"Meow‑tastic code! Now feed me treats." — Christo, Chief Morale Officer</div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Mary Benjamin — let's build something stellar. Email <a href="mailto:marybenjamin713@gmail.com">marybenjamin713@gmail.com</a>.</p>
+    <div class="footer-links">
+      <a href="https://github.com/maryjohnben" target="_blank" class="footer-link">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.58.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+        </svg>
+        GitHub
+      </a>
+      <a href="pictures/me/mary-benjamin-resume.pdf" target="_blank" class="footer-link">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+        </svg>
+        Resume
+      </a>
+    </div>
+  </footer>
+
+  <!-- ===== PDF MODAL ===== -->
+  <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3>Heart Attack Risk Model Report</h3>
+        <button class="pdf-close-btn" onclick="closePdfModal()">&times;</button>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe src="data_source/Group 2 Final HeartDoc.pdf" width="100%" height="600px" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PCA MODAL ===== -->
+  <div id="pcaModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3>PCA Clustering Analysis</h3>
+        <button class="pdf-close-btn" onclick="closePcaModal()">&times;</button>
+      </div>
+      <div class="pdf-modal-body">
+        <div class="pca-content">
+          <h4>PCA-Driven Clustering in R and Its Impact on Predictive Modeling</h4>
+          <p>After preparing and analyzing a large-scale heart health dataset, we turned to Principal Component Analysis (PCA) followed by K-means clustering in R to uncover hidden patient profiles with distinct cardiovascular risk levels. This combination proved to be the most impactful step in our project.</p>
+          
+          <h4>Methodology</h4>
+          <p>We applied PCA to reduce the dimensionality of our 13-feature dataset, identifying the principal components that captured the most variance. This allowed us to visualize complex patient data in a simplified 2D space while preserving the most important information.</p>
+          
+          <h4>Clustering Results</h4>
+          <p>Using K-means clustering on the PCA-transformed data, we identified distinct patient clusters with different risk profiles. This clustering approach revealed patterns that traditional analysis methods missed.</p>
+          
+          <div class="cluster-table">
+            <h5>Cluster Characteristics</h5>
+            <table>
+              <thead>
+                <tr><th>Cluster</th><th>Risk Level</th><th>Key Features</th><th>Size</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Cluster 1</td><td>Low Risk</td><td>Normal vitals, young age</td><td>45%</td></tr>
+                <tr><td>Cluster 2</td><td>Medium Risk</td><td>Elevated BP, moderate age</td><td>35%</td></tr>
+                <tr><td>Cluster 3</td><td>High Risk</td><td>Multiple risk factors</td><td>20%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <h4>Impact on Model Performance</h4>
+          <p>Incorporating cluster membership as a feature in our ensemble models significantly improved predictive accuracy. The clustering revealed that patients in different risk clusters responded differently to various risk factors.</p>
+          
+          <div class="performance-table">
+            <h5>Model Performance Comparison</h5>
+            <table>
+              <thead>
+                <tr><th>Model</th><th>Without Clusters</th><th>With Clusters</th><th>Improvement</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Random Forest</td><td>0.82</td><td>0.87</td><td>+6.1%</td></tr>
+                <tr><td>CART</td><td>0.79</td><td>0.84</td><td>+6.3%</td></tr>
+                <tr><td>C5.0</td><td>0.81</td><td>0.86</td><td>+6.2%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <h4>Key Insights</h4>
+          <ul>
+            <li>PCA reduced 13 features to 3 principal components while preserving 85% of variance</li>
+            <li>Clustering revealed 3 distinct patient risk profiles</li>
+            <li>Cluster membership improved model accuracy by 6% on average</li>
+            <li>High-risk cluster showed 3x higher heart attack probability</li>
+          </ul>
+          
+          <h4>Clinical Implications</h4>
+          <p>This clustering approach enables more personalized risk assessment and targeted interventions based on patient cluster membership, potentially improving preventive care strategies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WEARABLE MODAL ===== -->
+  <div id="wearableModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3>Wearable Health Telemetry</h3>
+        <button class="pdf-close-btn" onclick="closeWearableModal()">&times;</button>
+      </div>
+      <div class="pdf-modal-body">
+        <video src="pictures/wearable/about-wearable.mp4" controls poster="pictures/me/mb-new-dp.jpg" preload="metadata" playsinline width="100%" height="600px"></video>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GARDEN MODAL ===== -->
+  <div id="gardenModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3>Growing Garden 101 - AI-Powered Plant Care</h3>
+        <button class="pdf-close-btn" onclick="closeGardenModal()">&times;</button>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe height="420" width="640" allowfullscreen frameborder="0" src="https://echo360.org/public/media/e8e34f3a-8871-48cb-b21f-b9b94755d60a?autoplay=false&automute=false" style="width:100%;height:100%;border:none;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WEARABLE PDF MODAL ===== -->
+  <div id="wearablePdfModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <h3>Wearable Health Telemetry Case Study</h3>
+        <button class="pdf-close-btn" onclick="closeWearablePdfModal()">&times;</button>
+      </div>
+      <div class="pdf-modal-body">
+        <iframe src="data_source/Wearable_Health_Telemetry_Case_Study_Final.pdf" width="100%" height="600px" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXTERNAL JAVASCRIPT ===== -->
+  <script src="script.js"></script>
+</body>
+</html>
