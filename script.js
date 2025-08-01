@@ -264,8 +264,26 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const themeBtn = document.getElementById('themeBtn');
   if (themeBtn) {
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+      themeBtn.textContent = '☀️';
+    } else {
+      themeBtn.textContent = '🌙';
+    }
+
     themeBtn.addEventListener('click', function() {
       document.body.classList.toggle('dark');
+      
+      // Update button icon
+      if (document.body.classList.contains('dark')) {
+        themeBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
     });
   }
 }); 
